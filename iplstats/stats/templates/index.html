@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPL STATS</title>
+</head>
+<body>
+    <h1>IPL STATS</h1>
+
+    <form action="/stats_list" method="post">
+        {% csrf_token %}
+        <label for="year">Select Year: </label>
+        <input id="year" type="text" name="year" value="{{ year }}">
+        <input type="submit" value="OK">
+    </form>
+</body>
+</html>
