@@ -49,6 +49,26 @@ class Deliveries(models.Model):
     dismissal_kind = models.CharField(max_length=100, null=True)
     fielder = models.CharField(max_length=100, null=True)
 
-    # def __str__(self):
-    #     """Brand name representation."""
-    #     return self.name
+class Native(models.Model):
+    DATE = models.DateTimeField(max_length=300, null=True)
+    PCC_SITENAME = models.CharField(max_length=300, null=True)
+    PCC_AUDIENCE = models.CharField(max_length=300, null=True)
+    PCC_UNIT_TYPE = models.CharField(max_length=300, null=True)
+    PCC_PLATFORM_DEVICE = models.CharField(max_length=300, null=True)
+    CREATIVE_NAME = models.CharField(max_length=300, null=True)
+    CREATIVE_TYPE = models.CharField(max_length=300, null=True)
+    CREATIVE_PLACEMENT = models.CharField(max_length=300, null=True)
+    CAMPAIGN_GROUP = models.CharField(max_length=300, null=True)
+    HEADLINE = models.CharField(max_length=300, null=True)
+    BODY = models.CharField(max_length=300, null=True)
+    COST = models.FloatField(null=True)
+    CLICKS = models.IntegerField(null=True)
+    IMPRESSIONS = models.IntegerField(null=True)
+    ENGAGEMENTS = models.IntegerField(null=True)
+    LIKES = models.IntegerField(null=True)
+    SHARES = models.IntegerField(null=True)
+    LEADS = models.IntegerField(null=True)
+    FOLLOWS = models.IntegerField(null=True)
+    COMMENTS = models.IntegerField(null=True)
+    REACTIONS = models.IntegerField(null=True)
+    LANDING_PAGE_CLICKS = models.IntegerField(null=True)

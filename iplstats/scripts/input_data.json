@@ -1,0 +1,60 @@
+{
+    "input_file_path": "/Users/aviralagarwal/gale/ipl/iplstats/scripts/sample2.csv",
+    "output_file_type": "CSV",
+    "output_file_path": "/Users/aviralagarwal/gale/ipl/iplstats/scripts/output.csv",
+    "dimensions": [
+        "PCC_SITENAME",
+        "PCC_AUDIENCE",
+        "PCC_UNIT_TYPE"
+    ],
+    "metrics": [
+        "ENGAGEMENTS",
+        "LIKES",
+        "SHARES",
+        "LEADS",
+        "FOLLOWS",
+        "COMMENTS",
+        "REACTIONS",
+        "LANDING_PAGE_CLICKS"
+    ],
+    "filters": {
+        "PCC_AUDIENCE": [
+            "Native"
+        ],
+        "PCC_PLATFORM_DEVICE": [
+            "Cross Device",
+            "Desktop"
+        ],
+        "PCC_SITENAME": [
+            "LINKEDIN"
+        ],
+        "PCC_UNIT_TYPE": [
+            "Video",
+            "Banner"
+        ]
+    },
+    "date": {
+        "start_date": "2022-05-01",
+        "end_date": "2022-06-30"
+    },
+    "sort": [
+        {
+            "name": "FOLLOWS",
+            "order": "DESC"
+        },
+        {
+            "name": "PCC_AUDIENCE",
+            "order": "ASC"
+        }
+    ],
+    "search": {
+        "text": "LINK",
+        "columns": [
+            "PCC_SITENAME"
+        ]
+    },
+    "pagination": {
+        "page": 1,
+        "limit": 10
+    }
+}
