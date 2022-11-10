@@ -41,7 +41,7 @@ dim_met = dimensions + metrics
 dim_met.insert(0,'\ufeffdate')   
 def run():
     timer_start = timeit.default_timer()
-    with open(input_file,'r',newline='') as fin,open('output_new.csv','w',newline='') as fout:
+    with open(input_file,'r',newline='') as fin,open(output_file,'w',newline='') as fout:
         final = []
         # skip needed because sample data had spaces after comma delimiters.
         reader = csv.DictReader(fin, skipinitialspace=True)
@@ -53,7 +53,7 @@ def run():
             dat = i['\ufeffdate']
             new_date = datetime.strptime(dat, '%d/%m/%Y').date()
             temp = {}
-            if ((new_date > start_date and new_date < end_date) and (i['PCC_AUDIENCE'] in filters['PCC_AUDIENCE']) and (i['PCC_SITENAME'] in filters['PCC_SITENAME']) and (i['PCC_UNIT_TYPE'] in filters['PCC_UNIT_TYPE']) and (i['PCC_PLATFORM_DEVICE'] in filters['PCC_PLATFORM_DEVICE'])):
+            if ((new_date > start_date and new_date < end_date) and (i[key] in value for key,value in filters.items())):
                 for k in i:
                     if k in dim_met: 
                         temp[k] = i[k]
